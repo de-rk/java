@@ -1,0 +1,21 @@
+package com.github.test;
+
+	public class Tree {
+		public String name;
+		public int length;
+		public boolean leaf;
+		public String print;
+		
+		public void print(String n,int l,boolean f) {
+			if (f==true)
+			System.out.println(n+"为有叶植物"+"一般可生长到"+l+"米");
+			else
+				System.out.println("sadasfhas");
+		}
+		
+		public void main(String[] args) {
+			Tree tree =new Tree();
+			tree.print("枫树",26,2>1);
+			tree.print("荷叶", 2, true);
+		}
+}

@@ -1,0 +1,7 @@
+package com.github.test;
+
+public class three {
+	public three() {
+		System.out.println("loading three class");
+	}
+}

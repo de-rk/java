@@ -1,0 +1,12 @@
+package com.github.test;
+
+import java.util.Arrays;
+
+public class Student {
+	int d;
+	public String sort(String[] name,int[] id,double[] sum) {
+		Arrays.sort(sum, 0, d);
+		return name[d]+id[d]+sum[d];
+		}
+
+}

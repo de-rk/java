@@ -1,0 +1,12 @@
+package com.github.test;
+
+public class Student {
+	String name;
+	int id;
+	double sum;
+	String[] sort;
+	public String sort(String name,int id,double sum) {
+		return name+id+sum;
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.github.test;
+
+public class Officer {
+	public void Officer() {
+		System.out.println("nihai ");
+	}
+}

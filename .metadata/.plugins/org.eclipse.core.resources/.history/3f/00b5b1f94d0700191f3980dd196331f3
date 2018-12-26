@@ -1,0 +1,17 @@
+package com.github.test;
+
+public class Rectangle {
+	
+	public Rectangle() {
+		
+	}
+	public void print() {
+		System.out.println("2、定义一个矩形类Rectangle：（知识点：对象的创建和使用）[必做题]");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Rectangle d=new Rectangle();
+		d.print();
+	}
+
+}

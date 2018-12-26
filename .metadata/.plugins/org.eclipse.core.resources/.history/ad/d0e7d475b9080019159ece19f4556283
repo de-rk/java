@@ -1,0 +1,7 @@
+package com.github.test;
+
+public class two extends three{
+	public two() {
+		System.out.println("loading two class");
+	}
+}

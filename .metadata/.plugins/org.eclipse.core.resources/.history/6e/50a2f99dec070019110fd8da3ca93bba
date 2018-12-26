@@ -1,0 +1,14 @@
+package com.github.test;
+
+import java.util.Arrays;
+
+public class Student {
+	int d;
+	public String sort(String[] name,int[] id,double[] sum) {
+		for (d=0;d<sum.length;d++)
+			if (sum[d]>sum[d+1])
+				sum[d+1]=sum[d];
+		return name[d]+id[d]+sum[d];
+		}
+
+}

@@ -1,0 +1,15 @@
+package com.github.test;
+
+public class Student {
+	String[] name;
+	int[] id;
+	double[] sum;
+	public String sort(String[] name,int[] id,double[] sum) {
+		for (int i=0;i<sum.length;i++)
+			if (sum[i]>sum[i+1])
+				return name[i]+id[i]+sum[i];
+			else
+				return name[i+1]+id[i+1]+sum[i+1];
+	}
+
+}

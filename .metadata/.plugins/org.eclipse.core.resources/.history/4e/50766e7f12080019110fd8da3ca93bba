@@ -1,0 +1,22 @@
+package com.github.test;
+
+
+public class Student {
+	private int age;
+	
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		if (age>35||age<18)
+			return ;
+		else this.age=age;
+	}
+	int d;
+	public String sort(String[] name,int[] id,double[] sum) {
+		for (d=0;d<sum.length;d++)
+			if (sum[d]>sum[d+1])
+				sum[d+1]=sum[d];
+		return name[d+1]+id[d+1]+sum[d+1];
+		}
+}

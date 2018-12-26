@@ -1,0 +1,8 @@
+package com.github.test;
+
+public class Radius {
+	double radius;
+	public Radius(double radius) {
+		this.radius=radius;
+	}
+}

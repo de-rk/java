@@ -1,0 +1,14 @@
+package com.github.test;
+
+
+public class Player {
+	String name;
+	int id;//«Ú‘±±‡∫≈
+	String team;
+	public Player(String name,int id,String team){
+		this.name=name;
+		this.id=id;
+		this.team=team;
+		System.out.println("name"+name+"id"+id+"team"+team);
+	}
+}

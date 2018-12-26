@@ -1,0 +1,10 @@
+package com.github.test;
+
+public class one extends two{
+	one(){
+		System.out.println("loading one class");
+	}
+	public static void main(String[] args) {
+		two a=new two();
+	}
+}

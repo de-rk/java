@@ -1,0 +1,16 @@
+package com.github.test;
+
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		System.out.println(" ‰»Î∞Îæ∂");
+		new Radius(scanner.nextDouble()).Radius();
+		for (int i=0;i<11;i++)
+			Player player=new Player("wang", i, "team")
+	}
+
+}

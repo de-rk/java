@@ -1,0 +1,2 @@
+´íÎó£º±àÂëGDK²»¿ÉÓ³Éä×Ö·û
+javac -encoding UTF-8 Test.java

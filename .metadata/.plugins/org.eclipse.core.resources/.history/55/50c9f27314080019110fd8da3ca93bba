@@ -1,0 +1,17 @@
+package com.github.test;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//new Laptop("red",5800).print();//调用同包的类方法
+		String[] name = {"zhangsan","nisi","wangwu"};
+		int[] id = {001,002,003};
+		double[] sum = {56.3,67.4,75.4};
+		//Scanner scanner=new Scanner(System.in);
+		//System.out.println(new Student().sort(name,id ,sum));
+	}
+
+}

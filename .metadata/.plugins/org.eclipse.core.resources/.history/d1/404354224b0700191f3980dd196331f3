@@ -1,0 +1,18 @@
+package com.github.test;
+
+public class Point {
+	int x,y;
+	public Point() {
+		
+	}
+	public Point(int x,int y) {
+		System.out.println(x+" "+y);
+	}
+	public void movePoint(int x,int y) {
+		System.out.println(x+" "+y);
+	}
+	public static void main() {
+		new Point(4,7);
+		new Point().movePoint(7,9);
+	}
+}

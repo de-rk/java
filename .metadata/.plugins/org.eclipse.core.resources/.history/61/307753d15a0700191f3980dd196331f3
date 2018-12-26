@@ -1,0 +1,11 @@
+package com.github.test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Laptop("red",5800).print();//调用同包的类方法
+		new Student().sort("sda", 001, 50);
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.github.test;
+
+public class Person {
+	String name;
+	double higth;
+	double ti;
+	public void sayHello() {
+		System.out.println("Hello,my name is ***");
+	}
+}

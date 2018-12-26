@@ -1,0 +1,44 @@
+package com.neusoft.test;
+import java.util.Scanner;
+
+public class FuncTest {
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		//创建扫描器实例，用于接收字符。变量=scanner.next();
+		//System.out.println(getX(scanner.nextInt()));
+		//接收int型数据，传给getX，输出返还值
+		//System.out.println(getY(scanner.next().split(",")));
+		//接收字符串，根据','分割成String型数组，再传给getY，输出返还值
+		FuncTest getZ=new FuncTest();
+		//实例化FuncTest类
+		//getZ.getZ();
+		//调用getZ方法
+		System.out.println(getZ.year(scanner.nextInt()));
+	}
+	public void getZ() {//无返还值，非static修饰需要实例化调用
+		System.out.println("Hello world!!!!!");
+	}
+	public String year(int x) {
+		if (x%4==0) {
+			if (x%100==0&&x%400!=0) 
+				return "不是闰年";
+			else 
+				return "是闰年";
+		}
+			return "不是闰年";
+		
+	}
+	public static int getX(int x) {//static 静态方法
+		int sum=1;
+		for (int i=1;i<=x;i++)
+			sum*=i;
+		return sum;//阶乘
+	}
+	public static int getY(String[] y) {
+		int sum=1;
+		for (int i=0;i<y.length;i++) {
+			sum*=Integer.parseInt(y[i]);//转换为int类型
+		}
+		return sum;
+	}
+}
