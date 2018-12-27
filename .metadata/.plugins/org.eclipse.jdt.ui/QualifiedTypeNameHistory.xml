@@ -16,4 +16,5 @@
 <fullyQualifiedTypeName name="sun.applet.Main"/>
 <fullyQualifiedTypeName name="com.github.test.Player"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>
