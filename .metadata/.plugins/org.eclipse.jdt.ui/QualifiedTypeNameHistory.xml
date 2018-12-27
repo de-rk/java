@@ -17,4 +17,13 @@
 <fullyQualifiedTypeName name="com.github.test.Player"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.HourlyEmployee"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.SalesEmployee"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.SalariedEmployee"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.ColaEmployee"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.English"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.Company"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.Computer"/>
+<fullyQualifiedTypeName name="com.neusoft.test_27.Student"/>
 </qualifiedTypeNameHistroy>
