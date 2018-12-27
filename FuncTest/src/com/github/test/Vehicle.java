@@ -26,8 +26,10 @@ public class Vehicle {
 		brand=a;
 		color=b;
 		speed=0;
+		System.out.print(color+" "+brand);
 	}
 	public String run(double c) {
-		return "以"+c+"公里的速度行驶";
+		speed=c;
+		return "以"+speed+"公里的速度行驶";
 	}
 }
