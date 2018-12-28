@@ -1,14 +1,19 @@
 package com.neusoft.test_27;
 
-import java.sql.Date;
-
 public class ColaEmployee {
-	String name;
-	//Date birthday;
-	public int month=10;
-	public double getSalary(int month){
-		if (month==this.month)
-			System.out.println("jiangli100");
+	private String name;
+	private int month;
+	 ColaEmployee(String name,int month) {
+		this.month = month;
+		this.name=name;
+	}
+	public int getMonth() {
 		return month;
+	}
+	public String getName() {
+		return name;
+	}
+	public void getSalary(int month) {
+		System.out.println(" ¼Ó 100");
 	}
 }

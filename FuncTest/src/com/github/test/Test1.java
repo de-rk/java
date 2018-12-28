@@ -9,9 +9,13 @@ public class Test1{
 		Scanner scanner = new Scanner(System.in);
 		/*System.out.println("输入半径");
 		new Radius(scanner.nextDouble()).Radius();*/
-		for (int i=1;i<12;i++)
-			new Player("name"+i, i, "team"+i);
-		System.out.println("只能创建11个球员");
+		System.out.println("输入创建数量");
+		int a=scanner.nextInt();
+		for (int i=1;i<=a;i++) {
+			Player.getPlayer("name"+i+" ", i, " team"+1);
+			System.out.println();
+		}
+		System.out.println("只能创建"+a+"个球员");
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.neusoft.test_26;
 
-public class Rectangle extends Shape{
+public abstract class Rectangle extends Shape{
 	double height;
 	double width;
 	public Rectangle() {}

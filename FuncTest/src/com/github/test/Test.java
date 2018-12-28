@@ -15,7 +15,7 @@ public class Test {
 		//以上解决传输数据的问题，将不同类型的数据保存在新的实例当中，并赋给数组。使用的时候使用 『.属性名』
 		Student sum1;
 		//下面就是冒泡排序的内容
-		for (int i=0;i<stu.length;i++)
+		for (int i=0;i<stu.length;i++) 
 			for (int j=0;j<stu.length-1;j++)
 				if (stu[j].sum<stu[j+1].sum) {
 					sum1=stu[j];
@@ -23,6 +23,6 @@ public class Test {
 					stu[j+1]=sum1;
 				}
 		for (int i=0;i<stu.length;i++)
-			System.out.println(stu[i].id+" "+stu[i].sum+" "+stu[i].name);
+			System.out.println(stu[i].id+" "+stu[i].sum+" "+stu[i].name);	
 	}
 }

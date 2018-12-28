@@ -2,15 +2,15 @@ package com.neusoft.test_27;
 
 public class SalesEmployee extends ColaEmployee{
 	int yuexiao;
-	double ticheng;
-	public SalesEmployee(int yuexiao,double ticheng) {
+	double ticheng=0.14;
+	public SalesEmployee(String name,int month,int yuexiao) {
+		super(name,month);
 		this.yuexiao=yuexiao;
-		this.ticheng=ticheng;
 	}
-	public double getSalary(int month) {
-		if (month==super.month)
-			return yuexiao*ticheng+100;
+	public void getSalary(int month) {
+		if (month==super.getMonth())
+			System.out.println(super.getName()+"  "+(yuexiao*ticheng+100));
 		else
-			return yuexiao*ticheng;
+			System.out.println(super.getName()+"  "+(yuexiao*ticheng));;
 	}
 }

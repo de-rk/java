@@ -1,6 +1,6 @@
 package com.neusoft.test_26;
 
-public class Shape {
+public abstract class Shape {
 	double area;
 	double per;
 	String color;
@@ -11,13 +11,7 @@ public class Shape {
 	public String getColor(){
 		return color;
 	}
-	public double getArea() {
-		return area;
-	}
-	public double getPer() {
-		return per;
-	}
-	public void showAll() {
-		System.out.println("面积"+area+"周长"+per);
-	}
+	public abstract double getArea();
+	public abstract double getPer();
+	public abstract void showAll();
 }

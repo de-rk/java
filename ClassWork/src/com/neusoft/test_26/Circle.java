@@ -13,6 +13,6 @@ final class Circle extends Shape{
 	}
 	public static void main(String[] args) {
 		new Circle().showAll();
-		new Rectangle(20,30,"red").showAll();
+		//new Rectangle(20,30,"red").showAll();
 	}
 }
