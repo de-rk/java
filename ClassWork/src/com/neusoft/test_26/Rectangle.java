@@ -1,26 +1,24 @@
 package com.neusoft.test_26;
 
 public class Rectangle extends Shape{
-	double height;
-	double width;
-	public Rectangle() {}
-	public Rectangle(double height,double width,String color) {
-		super("red");
-		this.height=height;
-		this.width=width;
-	}
-	@Override
-	public double getArea(double height,double width){
-		area=height*width;
-		return area;
-	}
-	@Override
-	public double getPer(double height,double width) {
-		per=2*(height+width);
-		return per;
-	}
-	@Override//ÖØĞ´·½·¨¼ÇµÃ¼Ó override
-	public void showAll() {
-		System.out.println("Ãæ»ı"+area+"ÖÜ³¤"+per);
-	}
+    private double height;
+    private double width;
+    public Rectangle(){}
+    public Rectangle(double height,double width,String color){
+        super(color);
+        this.height=height;
+        this.width=width;
+    }
+    @Override
+    public double getPer(){
+        return (height+width)*2;
+    }
+    @Override
+    public void showAll(){
+        System.out.println(super.color+"è‰²çš„çŸ©å½¢é¢ç§¯ï¼š"+getArea()+"å‘¨é•¿:"+getPer());
+    }
+    @Override
+    public double getArea(){
+        return height*width;
+    }
 }

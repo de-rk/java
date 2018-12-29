@@ -1,25 +1,20 @@
 package com.neusoft.test_26;
 
-import java.util.Scanner;
-
-final class Circle extends Shape{
-	double radius;
-	final double PI=3.14;
-	@Override
-	public double getArea(double radius){
-		return area=PI*radius*radius;
-	}
-	@Override
-	public double getPer(double height,double width) {
-		return per=height*width;
-	}
-	@Override//ÖØĞ´·½·¨¼ÇµÃ¼Ó override
-	public void showAll(double height,double width) {
-		System.out.println("Ãæ»ı"+getArea(height,width)+"ÖÜ³¤"+getPer(height,width));
-	}
-	public static void main(String[] args) {
-		Scanner scanner=new Scanner(System.in);
-		new Circle().showAll(scanner.nextDouble(),scanner.nextDouble());
-		//new Rectangle(20,30,"red").showAll();
-	}
+public class Circle extends Shape{
+    private double radius;
+    final double PI=3.14;
+    public Circle(){}
+    public Circle(double radius,String color){
+        super(color);
+        this.radius=radius;
+    }
+    public double getPer(){
+        return 2*PI*radius;
+    }
+    public void showAll(){
+        System.out.println(color+"è‰²åœ†çš„é¢ç§¯ï¼š"+getArea()+"å‘¨é•¿ï¼š"+getPer());
+    }
+    public double getArea(){
+        return PI*radius*radius;
+    }
 }
