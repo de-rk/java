@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Mathematical {
 	   public static void main(String[] args){
+		   //第一题
 	   int i=1;
 	    /*while(i<101){
 	            boolean t=false;
