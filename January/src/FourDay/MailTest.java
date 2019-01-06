@@ -33,6 +33,8 @@ public class MailTest {
 		//判断其中含不含有@和。
 		if (pan(mail)==true)
 			System.out.println(mail);
+		else
+			System.out.println("errer");
 		
 				
 	}
@@ -47,7 +49,7 @@ public class MailTest {
 			else if(b[i]=='.')
 				sum[1]++;
 			}
-		if (sum[0]>0&&sum[1]>0) {
+		if (sum[0]==1&&sum[1]==1) {
 			return true;
 		}else
 			return false;
