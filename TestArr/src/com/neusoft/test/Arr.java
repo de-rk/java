@@ -1,4 +1,4 @@
-package com.nuesoft.test;
+package com.neusoft.test;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -18,12 +18,12 @@ public class Arr {
 			System.out.println(arr[i]);*/
 		/*int arr1[]= {5,500,64,78,3,1};
 		int arr2[]=new int[10];
-		System.arraycopy(arr1, 0, arr2, 4, arr1.length);//½«Ò»¸öÊý×écopyµ½ÁíÒ»¸ö³¤¶È´óµÄÊý×éÀïÃæ
-		Arrays.sort(arr2,5,8);//Ä¬ÈÏÈ«²¿ÉýÐòÅÅÁÐ£¬sortÅÅÐò·¨
+		System.arraycopy(arr1, 0, arr2, 4, arr1.length);//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½copyï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		Arrays.sort(arr2,5,8);//Ä¬ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½sortï¿½ï¿½ï¿½ï¿½
 		System.out.println(Arrays.toString(arr2));*/
 		/*char arr3[]= {'j','y','g','a'};
 		char arr4[]=new char[10];
-		arr4=Arrays.copyOf(arr3,arr3.length);//copy·¨
+		arr4=Arrays.copyOf(arr3,arr3.length);//copyï¿½ï¿½
 		System.out.println(arr4);
 		Arrays.sort(arr3);
 		System.arraycopy(arr3,0,arr4,0,arr3.length);
@@ -31,18 +31,18 @@ public class Arr {
 		//bubble sort
 		Scanner scanner=new Scanner(System.in);
 		String arr[]=new String[5];
-		arr=scanner.next().split(",");//¿ÉÒÔ³¬³öÊý×é³¤¶È
+		arr=scanner.next().split(",");//ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é³¤ï¿½ï¿½
 		int srr1[]=new int[4];
 		srr1[0]=1 ;
 		srr1[1]=1 ;
 		srr1[2]=1 ;
 		srr1[3]=1 ;
-//		srr1[4]=5 ;//Õâ¸ö¾Í²»ÄÜ³¬³öÊý×é³¤¶È
+//		srr1[4]=5 ;//ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é³¤ï¿½ï¿½
 		System.out.println(arr[5]);
 		System.out.println(Arrays.toString(srr1));
 		System.out.println(Arrays.toString(arr));
 		/*for (int i=0;i<10;i++) {
-			System.out.println("ÊäÈëµÚ"+i+"¸öÊý:");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½"+i+"ï¿½ï¿½ï¿½ï¿½:");
 			arr[i]=scanner.nextInt();
 		}*/
 		/*String str=scanner.next();
@@ -56,14 +56,14 @@ public class Arr {
 			{
 				if (arr[j]>arr[j+1])
 				{
-					t=arr[j];//j>j+1,´ËÊ±j¿Õ
-					arr[j]=arr[j+1];//½«j+1¸øj,´ËÊ±j+1¿Õ
-					arr[j+1]=t;//²»Í£µÄ[j+1]µÄÖµ¸³¸øt£¬µ±[j+1]=10µÄÊ±ºò×î´óµÄÖµÒÑ¾­¸³¸øarr[j+1]
+					t=arr[j];//j>j+1,ï¿½ï¿½Ê±jï¿½ï¿½
+					arr[j]=arr[j+1];//ï¿½ï¿½j+1ï¿½ï¿½j,ï¿½ï¿½Ê±j+1ï¿½ï¿½
+					arr[j+1]=t;//ï¿½ï¿½Í£ï¿½ï¿½[j+1]ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½[j+1]=10ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½arr[j+1]
 				}
 			}
 			System.out.println(Arrays.toString(arr));*/
 			
-		/*for(int i = 1; i < n; i++)//Ö»ÐèÒª¶Ô±È9´Î
+		/*for(int i = 1; i < n; i++)//Ö»ï¿½ï¿½Òªï¿½Ô±ï¿½9ï¿½ï¿½
 				   {
 				      for(int j = 0; j < n-i; j++)
 				       {
@@ -77,8 +77,8 @@ public class Arr {
 				  }
 		System.out.println(Arrays.toString(arr));*/
 		/*int sum=0;
-		for (int j=0;j<arr.length;j++) {//±È½Ï¾Å´Î
-		 for(int i=0;i<arr.length;i++){//½«´óµÄÊýÍùºóÅÅ£¬Ò²¿ÉÍùÇ°ÅÅ½«¾ÍÐèÒªjºÍi¼õ¼õ
+		for (int j=0;j<arr.length;j++) {//ï¿½È½Ï¾Å´ï¿½
+		 for(int i=0;i<arr.length;i++){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Å½ï¿½ï¿½ï¿½ï¿½ï¿½Òªjï¿½ï¿½iï¿½ï¿½ï¿½ï¿½
 			 if(arr[j]<arr[i]){
 				 t=arr[i];
 				 arr[i]=arr[j];
