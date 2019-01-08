@@ -2,7 +2,9 @@ package NumberSeven;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+/**
+ * 课后练习第二题
+*/
 public class ArrayWork {
 
 	public static void main(String[] args) {

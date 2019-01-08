@@ -1,7 +1,9 @@
 package NumberSeven;
 
 import java.util.LinkedList;
-
+/**
+ * 课后练习第一题
+*/
 public class LinkedListWork {
 
 	public static void main(String[] args) throws Exception {

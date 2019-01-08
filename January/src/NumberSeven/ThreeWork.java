@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * 课后练习第三题
+*/
 public class ThreeWork {
 
 	public static void main(String[] args) {
