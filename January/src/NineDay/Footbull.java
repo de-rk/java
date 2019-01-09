@@ -10,33 +10,34 @@ import java.util.Scanner;
 */
 public class Footbull {
 	public static void main(String[] args) {
-		Map<String,ArrayList> map=new HashMap();
+		ArrayList list=new ArrayList();
 		int[] cup=new int[20];
 		int[] year=new int[20];
-		String[] city=new String[20];
-		String[] champion=new String[20];
+		
+		//手动录入数据难受哦
+		String[] city= {"乌拉圭","意大利","法国","巴西","瑞士","瑞典","智利","英格兰","墨西哥","前西德","阿根廷","西班牙","墨西哥","意大利","美国","法国","韩日","德国","南非","巴西"};
+		String[] champion= {"乌拉圭","意大利","意大利","乌拉圭","西德","巴西","巴西","英格兰","巴西","西德","阿根廷","意大利","阿根廷","西德","巴西","法国","巴西","意大利","西班牙","德国"};
+		
 		int sum=0;
 		for (int i=0;;i++) {
-			//cup[i]=i+1;
+			if (i<20)
+			cup[i]=i+1;
 			if (i==3||i==4)
 				continue;
 			else {
-				year[sum]=1930+i*4;
 				if (sum==20)
 					break;
 				else
+					year[sum]=1930+i*4;
 					sum++;
 			}
 		}
-		System.out.println(Arrays.toString(cup));
-		System.out.println(Arrays.toString(year));
 		
-		//读取用户输入信息
-		System.out.println("输入年份或者冠军球队");
-		Scanner scanner=new Scanner(System.in);
-		scanner.next();//不带空格读取
-		
-		
+		list.add(cup);
+		list.add(year);
+		list.add(city);
+		list.add(champion);
+			
 	}
 
 }
