@@ -13,4 +13,8 @@
 		<item value="1|Noto Sans CJK SC|11.5|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="515" key="DIALOG_HEIGHT"/>
 	</section>
+	<section name="InferTypeArguments">
+		<item value="true" key="leaveUnconstrainedRaw"/>
+		<item value="true" key="assumeCloneReturnsSameType"/>
+	</section>
 </section>
