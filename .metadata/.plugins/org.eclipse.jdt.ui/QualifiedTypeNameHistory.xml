@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="com.github.test.Point"/>
 <fullyQualifiedTypeName name="com.github.test.Rectangle"/>
 <fullyQualifiedTypeName name="com.github.test.Laptop"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.github.test.Vehicle"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.c14n.Canonicalizer"/>
 <fullyQualifiedTypeName name="com.github.test.Radius"/>
@@ -53,4 +52,12 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
