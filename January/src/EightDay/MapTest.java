@@ -13,14 +13,13 @@ import java.util.Set;
 public class MapTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Test apple=new Test(1,"Jerry");
 		Test banana=new Test(2,"Tom");
 		
 		//给Map类型的a中put值。需要创建Key
 		//添加泛型<E>
 		//String变量创建会占用内存
-		Map<StringBuilder,Test> a=new HashMap();
+		Map<StringBuilder,Test> a=new HashMap<>();
 		a.put(new StringBuilder("Jerry1"), apple);//(key,Object Value)
 		a.put(new StringBuilder("Tom1"), banana);
 		
