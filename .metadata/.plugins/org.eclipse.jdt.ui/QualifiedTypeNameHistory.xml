@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.neusoft.test.FuncTest"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="com.github.test.Point"/>
-<fullyQualifiedTypeName name="com.github.test.Rectangle"/>
-<fullyQualifiedTypeName name="com.github.test.Laptop"/>
-<fullyQualifiedTypeName name="com.github.test.Vehicle"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.c14n.Canonicalizer"/>
-<fullyQualifiedTypeName name="com.github.test.Radius"/>
-<fullyQualifiedTypeName name="com.github.test.one"/>
-<fullyQualifiedTypeName name="sun.applet.Main"/>
-<fullyQualifiedTypeName name="com.neusoft.test_27.SalesEmployee"/>
 <fullyQualifiedTypeName name="com.neusoft.test_27.SalariedEmployee"/>
 <fullyQualifiedTypeName name="com.neusoft.test_27.English"/>
 <fullyQualifiedTypeName name="com.neusoft.test_27.Company"/>
@@ -35,7 +24,6 @@
 <fullyQualifiedTypeName name="NumberSeven.LinkedListWork"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
@@ -60,4 +48,16 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.ThreadDeath"/>
+<fullyQualifiedTypeName name="Eleven.ThreadTest"/>
+<fullyQualifiedTypeName name="fourteenth.TicketTh"/>
+<fullyQualifiedTypeName name="fourteenth.Ticket"/>
+<fullyQualifiedTypeName name="java.net.ServerSocket"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.DataOutputStream"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.net.Socket"/>
+<fullyQualifiedTypeName name="fourteenth.SocketTest"/>
 </qualifiedTypeNameHistroy>
