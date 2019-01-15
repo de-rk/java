@@ -14,6 +14,5 @@ public class Test {
 //		th1.sleep(1000);
 		th2.start();
 //		th2.sleep(500);
-		
 	}
 }
