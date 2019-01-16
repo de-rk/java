@@ -1,4 +1,4 @@
-package com.soft.dao;
+package com.soft.baseDao;
 /**
  * 数据库连接
 */
@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class Db {
 	private ResultSet rs;
 	private Connection conn;
+	private PreparedStatement ps;
 	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
 	private String driver="oracle.jdbc.driver.OracleDriver";
 	private String user="scott";
@@ -21,11 +22,20 @@ public class Db {
 	public Db(){
 		try {
 			Class.forName(driver);
-			conn=DriverManager.getConnection(url, user, password);
-		} catch (ClassNotFoundException | SQLException e) {
+			
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void getConn() {
+		try {
+			conn=DriverManager.getConnection(url, user, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 	//查询
 	/**
@@ -36,9 +46,9 @@ public class Db {
 	*/
 	public ResultSet executeQ(String sql,Object[] oj) {
 		try {
-			
+			 getConn();
 			//声明一个PreparedStatement对象ps接收查询的结果
-			PreparedStatement ps=conn.prepareStatement(sql);
+			ps=conn.prepareStatement(sql);
 			
 			// 如果oj数组长度大于0，那么就设置查询空缺的条件
 			if (oj.length>0)
@@ -48,6 +58,7 @@ public class Db {
 					}
 			
 			// executeQuery执行查询语句将结果用集合对象rs保存
+
 			rs=ps.executeQuery();
 			
 		} catch (SQLException e) {
@@ -66,10 +77,53 @@ public class Db {
 		return executeQ(sql,new Object[]{});
 	}
 	
+	// 修改
+	/**
+	 * update ,insert ,delete
+	*/
+	public int update(String sql,Object[] oj) {
+		int a = 0;
+		
+		try {
+			getConn();
+			// 接收查询结果
+			ps=conn.prepareStatement(sql);
+			// 
+			if(oj.length>0) {
+				for (int i=0;i<oj.length;i++) {
+					ps.setString(i+1, oj[i].toString());
+				}
+			}
+			
+			System.out.println(ps.execute());
+			
+			// executeQuery执行查询语句将结果用集合对象rs保存
+			
+			a=ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return a;	
+	}
+	
+	// 重载
+	/**
+	 * @param sql update
+	 * @param 替换条件
+	*/
+	public int update(String sql) {
+		return update(sql,new Object[] {});
+	}
+	
 	// 断开连接
 	public void close() {
 		try {
-			conn.close();
+//			if (!rs.isClosed())
+//				rs.close();
+//			if (!ps.isClosed())
+//				ps.close();
+			if (!conn.isClosed())
+				conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
