@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.neusoft.test_27.SalariedEmployee"/>
-<fullyQualifiedTypeName name="com.neusoft.test_27.English"/>
-<fullyQualifiedTypeName name="com.neusoft.test_27.Company"/>
-<fullyQualifiedTypeName name="com.neusoft.test_27.Computer"/>
-<fullyQualifiedTypeName name="com.neusoft.test_27.Student"/>
-<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Single"/>
 <fullyQualifiedTypeName name="com.neusoft.test_28.Singleton"/>
 <fullyQualifiedTypeName name="com.github.test.Player"/>
 <fullyQualifiedTypeName name="com.neusoft.test_27.ColaEmployee"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.net.Socket"/>
 <fullyQualifiedTypeName name="fourteenth.SocketTest"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="seventeenth.Dbhelp"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>
