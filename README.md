@@ -1,20 +1,33 @@
 # java
-## 2018Äê12ÔÂ11ºÅ¿ªÊ¼µÄÅàÑµ»ú¹¹Ñ§Ï°ÎÄµµ
-/# ºóÃæĞèÒª¼Ó¿Õ¸ñ
-<code>ÓÃÓÚ½ø½×</code>
+## 2018å¹´12æœˆ11å·å¼€å§‹çš„åŸ¹è®­æœºæ„å­¦ä¹ æ–‡æ¡£
+\# åé¢éœ€è¦åŠ ç©ºæ ¼
+<code>ç”¨äºè¿›é˜¶</code>
 
-<code> µÚÒ»Ìì²Î¼ÓÅàÑµÊ±³öÏÖµÄÒ»¸ö´íÎó£¬±àÂë¸ñÊ½ÎÊÌâ </code>
-**´íÎó£º±àÂëGDK²»¿ÉÓ³Éä×Ö·û**
+`ç¬¬ä¸€å¤©å‚åŠ åŸ¹è®­æ—¶å‡ºç°çš„ä¸€ä¸ªé”™è¯¯ï¼Œç¼–ç æ ¼å¼é—®é¢˜`
 
+**é”™è¯¯ï¼šç¼–ç GDKä¸å¯æ˜ å°„å­—ç¬¦**
 >javac -encoding UTF-8 Test.java
 
-<code>Á÷³ÌÍ¼</code>
-```flow
-st=>start: ¿ªÊ¼
-op=>operation: My Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-&```
+### JDBCè¿æ¥æ•°æ®åº“
+`ResultSet rs` `Coonection conn` `PreparedStatement ps`
+
+*åŠ è½½é©±åŠ¨ç±»
+
+`Class.forName(driver)`
+
+*è¿æ¥æ•°æ®åº“
+
+`conn.DriverManager.getConnection(url,user,password)`
+
+*é¢„ç¼–è¯‘sqlè¯­å¥
+
+`ps=conn.preparedStatement(sql)`
+
+*è®¾ç½®æŸ¥è¯¢æ¡ä»¶
+
+```for (int i=0;i<oj.length;i++)
+				ps.setString(i+1, oj[i].toString())```
+
+*æ‰§è¡ŒæŸ¥è¯¢å¹¶è¿”è¿˜ç»“æœé›†
+
+`rs=ps.executeQurey`

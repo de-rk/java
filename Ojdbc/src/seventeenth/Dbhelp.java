@@ -8,15 +8,16 @@ import java.sql.SQLException;
 
 public class Dbhelp {
 //	String url="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
-	String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
-	String driver="oracle.jdbc.driver.OracleDriver";
-	String user="scott";
-	String password="tiger";
+	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
+//	private String url1 = "jdbc:oracle:thin:@127.0.0.1:1521:orlc";
+	private String driver="oracle.jdbc.driver.OracleDriver";
+	private String user="scott";
+	private String password="tiger";
 	
 	//操作的连接对象
-	Connection conn;
-	PreparedStatement ps;
-	ResultSet rs;
+	private Connection conn;
+	private PreparedStatement ps;
+	private ResultSet rs;
 	
 	//创建构造器不要加返还值
 	public Dbhelp() {
@@ -54,7 +55,7 @@ public class Dbhelp {
 	}
 	
 	//update insert delete
-	public int Update(String sql,Object[] oj){
+	public int update(String sql,Object[] oj){
 		int sum = 0;
 		
 		//传sql语句
@@ -75,7 +76,7 @@ public class Dbhelp {
 	}
 	
 	//执行Execption 方法要加上throws 。执行try catch 不用
-	public int Update(String sql){
-		return Update(sql,new Object[] {});
+	public int update(String sql){
+		return update(sql,new Object[] {});
 	}
 }
