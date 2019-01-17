@@ -2,6 +2,7 @@
 ## 2018年12月11号开始的培训机构学习文档
 `第一天参加培训时出现的一个错误，编码格式问题`
 **错误：编码GDK不可映射字符**
+
 >javac -encoding UTF-8 Test.java
 -----------
 
@@ -25,24 +26,20 @@ for (int i=0;i<oj.length;i++)
 rs=ps.executeQurey
 return rs
 ```
-```plsql
-Oracle 查询语句
+```sql
+Oracle plsql
+--select
+select * from dbuser
 
-select * from dbhelp
-
---update 
-
+--update
 update dbuser set password='admin' where userid=1
 
 --insert
-
 insert table dbuser(userid,uname,password) values(1,'Jerry','admin')
 
 --alter
-
 alter table dbuser add(hiredate varchar(20))
 
 --delete
-
 不准delete，只能把isdelete的值修改为1
 ```

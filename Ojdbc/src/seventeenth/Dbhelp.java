@@ -7,9 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Dbhelp {
-//	String url="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
-	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
-//	private String url1 = "jdbc:oracle:thin:@127.0.0.1:1521:orlc";
+//	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl";
 	private String driver="oracle.jdbc.driver.OracleDriver";
 	private String user="scott";
 	private String password="tiger";
@@ -22,7 +21,7 @@ public class Dbhelp {
 	//创建构造器不要加返还值
 	public Dbhelp() {
 		try {
-			//Class for name 加载驱动类(驱动程序是外部添加的)
+			//Class for name 注册驱动类(驱动程序是外部添加的)
 			Class.forName(driver);
 			//driver manager 加载驱动管理程序(连接到数据库的地址，登入用户，密码)
 			conn=DriverManager.getConnection(url, user, password);
@@ -78,5 +77,20 @@ public class Dbhelp {
 	//执行Execption 方法要加上throws 。执行try catch 不用
 	public int update(String sql){
 		return update(sql,new Object[] {});
+	}
+	
+	public void close() {
+		try {
+//			if (!rs.isClosed())
+//				rs.close();
+//			if (!ps.isClosed())
+//				ps.close();
+			if (!conn.isClosed())
+				conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }
