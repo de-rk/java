@@ -1,16 +1,16 @@
 # java
-## 2018年12月11号开始的培训机构学习文档
-/# 后面需要加空格
-<code>用于进阶</code>
+## 2018��12��11�ſ�ʼ����ѵ����ѧϰ�ĵ�
+/# ������Ҫ�ӿո�
+<code>���ڽ���</code>
 
-<code> 第一天参加培训时出现的一个错误，编码格式问题 </code>
-**错误：编码GDK不可映射字符**
+<code> ��һ��μ���ѵʱ���ֵ�һ�����󣬱����ʽ���� </code>
+**���󣺱���GDK����ӳ���ַ�**
 
 >javac -encoding UTF-8 Test.java
 
-<code>流程图</code>
+<code>����ͼ</code>
 ```flow
-st=>start: 开始
+st=>start: ��ʼ
 op=>operation: My Operation
 cond=>condition: Yes or No?
 e=>end
