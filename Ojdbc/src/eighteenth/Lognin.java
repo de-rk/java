@@ -6,28 +6,30 @@ import java.sql.SQLException;
 public class Lognin implements Caozuo{
 
 	@Override
-	public Userdb login(String userid,String password) {
+	public Userdb login(Userdb user) {
 		Db db=new Db();
-		Userdb user2 = null;
 		
-		Object[] oj= {userid,password};
+		Object[] oj= {user.getUserid(),user.getPassword()};
 		String sql = "select * from userdb where userid=? and password=?";
 		
 		ResultSet rs=db.executeQ(sql, oj);
 		
 		try {
 			if (rs.next()) {
-					user2.setUserid(rs.getString("userid"));
-					user2.setUname(rs.getString("uname"));
-					user2.setPassword(rs.getString("password"));
-					user2.setBrithday(rs.getString("brithday"));
-					user2.setPro(rs.getString("pro"));
-					user2.setIsDelete(rs.getString("isDelete"));
-			}else
+				System.out.println("login succeed");
+				user.setUserid(rs.getInt("userid"));
+				user.setUname(rs.getString("uname"));
+				user.setPassword(rs.getString("password"));
+				user.setBrithday(rs.getString("brithday"));
+				user.setPro(rs.getInt("pro"));
+				user.setIsDelete(rs.getInt("isDelete"));
+			}else {
+				new CreateJFrame().lose();
 				return null;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return user2;
+		return user;
 	}
 }

@@ -11,7 +11,7 @@ public class Db {
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
-	private String url="jdbc:oracle:thin:@locadhost:1521:demo";
+	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
 	private String user="scott";
 	private String password="tiger";
 	
@@ -37,6 +37,7 @@ public class Db {
 	}
 	
 	public ResultSet executeQ(String sql,Object[] oj) {
+		conn();
 		try {
 			//3.创建语句
 			ps=conn.prepareStatement(sql);
@@ -58,6 +59,7 @@ public class Db {
 	}
 	
 	public int update(String sql,Object[] oj) {
+		conn();
 		int sum = 0;
 		try {
 			//3.创建语句

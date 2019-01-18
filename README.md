@@ -28,18 +28,20 @@ return rs
 ```
 ```sql
 Oracle plsql
---select
+--select--
 select * from dbuser
 
---update
+--update--
 update dbuser set password='admin' where userid=1
 
---insert
+--insert--
 insert table dbuser(userid,uname,password) values(1,'Jerry','admin')
 
---alter
+--alter--
 alter table dbuser add(hiredate varchar(20))
 
---delete
+--delete--
 不准delete，只能把isdelete的值修改为1
 ```
+
+[github franch](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)

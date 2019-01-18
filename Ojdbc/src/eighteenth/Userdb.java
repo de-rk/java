@@ -1,16 +1,16 @@
 package eighteenth;
 
 public class Userdb {
-	private String userid;
+	private int userid;
 	private String uname;
 	private String password;
-	private String isDelete;
-	private String pro;
+	private int isDelete;
+	private int pro;
 	private String brithday;
-	public String getUserid() {
+	public int getUserid() {
 		return userid;
 	}
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 	public String getUname() {
@@ -25,16 +25,16 @@ public class Userdb {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getIsDelete() {
+	public int getIsDelete() {
 		return isDelete;
 	}
-	public void setIsDelete(String isDelete) {
+	public void setIsDelete(int isDelete) {
 		this.isDelete = isDelete;
 	}
-	public String getPro() {
+	public int getPro() {
 		return pro;
 	}
-	public void setPro(String pro) {
+	public void setPro(int pro) {
 		this.pro = pro;
 	}
 	public String getBrithday() {

@@ -14,6 +14,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.FlowLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Swingdemo1 extends JFrame {
 
@@ -47,40 +52,74 @@ public class Swingdemo1 extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("user:");
-		lblNewLabel.setBounds(77, 53, 72, 18);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("password:");
-		lblNewLabel_1.setBounds(77, 138, 72, 18);
-		contentPane.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(219, 53, 86, 24);
-		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		JLabel lblNewLabel_1 = new JLabel("password:");
+		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(219, 135, 86, 24);
-		contentPane.add(passwordField);
+		
+		JButton btnNewButton_1 = new JButton("sign up");
 		
 		JButton btnNewButton = new JButton("login");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				Userdb u = new Lognin().login(textField.getText(), passwordField.getText());
-				if (u!=null)
-					new JFrame().setVisible(true);
+				Userdb userdb=new Userdb();
+				userdb.setUserid(Integer.parseInt(textField.getText()));
+				userdb.setPassword(passwordField.getText());
+				
+				//登入
+				Userdb userdb2=new Lognin().login(userdb);
+				CreateJFrame create=new CreateJFrame();
+				
+				//权限问题
+				if (userdb2!=null)
+					create.create(userdb2.getPro());
+				else
+					;
 			}
 		});
-		btnNewButton.setBounds(63, 202, 113, 27);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("sign up");
-		btnNewButton_1.setBounds(212, 202, 113, 27);
-		contentPane.add(btnNewButton_1);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(76)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnNewButton)
+						.addComponent(lblNewLabel_1)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(9)
+							.addComponent(lblNewLabel)))
+					.addGap(58)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnNewButton_1)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+							.addComponent(textField, Alignment.LEADING)
+							.addComponent(passwordField, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)))
+					.addContainerGap(126, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(33)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(35)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_1)
+						.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(42)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnNewButton)
+						.addComponent(btnNewButton_1))
+					.addContainerGap(60, Short.MAX_VALUE))
+		);
+		contentPane.setLayout(gl_contentPane);
 		
 	
 	}

@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Random" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Ojdbc"/>
 			<item value="random"/>
 			<item value="&#x09;&#x09;&#x09;name[i]=scanner.nextLine();"/>
 			<item value="sort"/>
@@ -17,9 +18,9 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="374" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans CJK SC|11.200195|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="514" key="DIALOG_HEIGHT"/>
+		<item value="356" key="DIALOG_WIDTH"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="452" key="DIALOG_HEIGHT"/>
 		<item value="1194" key="DIALOG_X_ORIGIN"/>
 		<item value="223" key="DIALOG_Y_ORIGIN"/>
 	</section>
