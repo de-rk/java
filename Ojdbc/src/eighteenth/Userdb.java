@@ -4,9 +4,10 @@ public class Userdb {
 	private int userid;
 	private String uname;
 	private String password;
-	private int isDelete;
-	private int pro;
 	private String brithday;
+	private int pro;
+	private int isDelete;
+	
 	public int getUserid() {
 		return userid;
 	}
