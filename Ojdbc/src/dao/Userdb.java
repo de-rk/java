@@ -1,4 +1,4 @@
-package eighteenth;
+package dao;
 
 public class Userdb {
 	private int userid;
