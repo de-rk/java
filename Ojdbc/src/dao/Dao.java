@@ -25,7 +25,7 @@ public abstract class Dao {
 		}
 	}
 	
-	public void conn() {
+	private void conn() {
 		try {
 			//2.建立连接
 			conn=DriverManager.getConnection(url, user, password);
@@ -49,13 +49,8 @@ public abstract class Dao {
 			rs=ps.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}/*finally {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}*/
+		}
+		
 		//5.处理结果(并没有处理完)
 		return rs;
 	}
@@ -106,8 +101,12 @@ public abstract class Dao {
 		}
 	}
 	
-//	public abstract void selectAll(String table);
-	public abstract void add(String table,String[] col,Object[] oj,String sql);
-
-	public abstract void selectAll(String table);
+	//添加图书，添加用户
+	public abstract int add(String table,String[] col,Object[] oj,String sql);
+	//查询所有图书，查询所有用户
+	public abstract void selectAll(String table,Userdb user,String[] col);
+	//循环输入
+	public abstract Object[] forO(String[] col);
+	//循环输出
+	public abstract void forP(ResultSet rs,Userdb user,String[] col);
 }

@@ -18,7 +18,6 @@ public class Ticket {
 					Thread.sleep(200);
 					//sleep() 让其他线程进来。后面语句没有机会继续执行完。进行了其他线程
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				

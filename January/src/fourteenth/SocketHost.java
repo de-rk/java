@@ -19,7 +19,6 @@ public class SocketHost {
 			System.out.println("address "+s.getLocalAddress()+":"+s.getPort());
 			dis.close();
 			s.close();
-		
 		}
 	}
 

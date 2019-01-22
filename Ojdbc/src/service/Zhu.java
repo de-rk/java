@@ -2,47 +2,33 @@ package service;
 
 import java.util.Scanner;
 
-import console.LoginC;
-import console.User;
-import dao.Dao;
-import dao.Userdb;
 import dao.UserDao;
+import dao.Userdb;
 
 public class Zhu {
-		
+
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
+		String num;
 		
 		System.out.println("\t"+"图书管理");
-		Userdb user = new Userdb();
 		System.out.println("1.注册"+"\t"+"2.登入");
-		String c=scanner.next();
+		System.out.println("输入exit退出系统");
+		System.out.println("输入..返回上一级");
 		
-		if (c.equals("1")) {
-			//1.注册
-			LoginC.signUp();
+		num=scanner.next();
+		
+		//1.注册
+		if (num.equals("1")) {
+			int b=LoginC.signUp();
+			new UserDao().isOK(b);
 		}
-		else if (c.equals("2")) {
-			//2.登入
-			System.out.println("\t"+"图书管理系统--登入");
-			
-			System.out.print("userid:");
-			user.setUserid(scanner.nextInt());
-			System.out.print("password:");
-			user.setPassword(scanner.next());
-			
-			//5.处理结果
-			user=LoginC.login(user);
-			
-			//选项,输入错误会有空指针异常
-			if (user!=null&&user.getIsDelete()!=1) {
-				if (user.getPro()==1)
-					User.adminC(user);
-				else
-					User.userC(user);
-			}else if(user!=null&&user.getIsDelete()==1) {
-				System.out.println("账户已被管理员删除");
-			}
+		//2.登入
+		else if (num.equals("2")) {
+			LoginC.login();
+		}else if (num.equals("exit")){
+			System.out.println("退出成功");
+			System.exit(0);
 		}else {
 			System.out.println("无效输入");
 		}
