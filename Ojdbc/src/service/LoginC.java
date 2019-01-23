@@ -4,7 +4,7 @@ import java.util.Scanner;
 import dao.LoginDao;
 import dao.Userdb;
 
-public class LoginC extends Thread{
+public class LoginC{
 	//登入
 	public static void login() {
 		System.out.println("\t"+"登入");
@@ -28,6 +28,7 @@ public class LoginC extends Thread{
 					User.userC(user);
 		}else if(user.getIsDelete()==1) {
 			System.out.println("账户已被管理员删除");
+			Zhu.t.stop();
 		}
 	}
 	
@@ -36,15 +37,4 @@ public class LoginC extends Thread{
 		System.out.println("\t"+"注册用户");
 		return new LoginDao().signUp();
 	}
-	
-//	//exit
-//	@Override
-//	public void run() {
-//		
-//	}
-//	
-//	public void sysExit(String num) {
-//		while (num.equals("exit"))
-//			System.exit(0);
-//	}
 }

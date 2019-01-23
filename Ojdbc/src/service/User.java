@@ -1,15 +1,21 @@
 package service;
 
 import java.util.Scanner;
+
 import dao.Userdb;
 import dao.UserDao;
 
 public class User {
+	
+	private static String num="";
+	public static String getNum() {
+		return num;
+	}
+	
 	/**
 	 * @param 普通用户
 	 * 	查看图书，需改密码
 	*/
-	private static String num;
 	public static void userC(Userdb user) {
 		System.out.println("\t"+"你好"+user.getUname());
 		System.out.println("1.查看图书"+"\t"+"2.修改密码");
@@ -18,6 +24,7 @@ public class User {
 		Scanner scanner=new Scanner(System.in);
 		UserDao userDao=new UserDao();
 		num=scanner.next();
+		
 		//1.查看图书
 		if (num.equals("1")) {
 			System.out.println("\t"+"现有图书");
@@ -40,13 +47,14 @@ public class User {
 				System.out.println("修改失败");
 		}else if(num.equals("..")) {
 			LoginC.login();
-		}else if(num.equals("exit")) {
-			System.out.println("退出成功");
-			System.exit(0);
-		}else
-			System.out.println("输入有误");
+		}else {
+			if (!num.equals("exit")) {
+				System.out.println("无效输入");
+			}
+		}
 	}
-	
+
+
 	/**
 	 * @param 管理员
 	 * 	对用户删改查，对图书增删改查
@@ -57,8 +65,11 @@ public class User {
 		
 		Scanner scanner=new Scanner(System.in);
 		UserDao userDao=new UserDao();
-		String num=scanner.next();
-		//1.用户删改查
+		num=scanner.next();
+		
+		/**
+		 * 操作用户
+		*/
 		if (num.equals("1")) {
 			userDao.selectAllUser(user);
 			
@@ -88,14 +99,16 @@ public class User {
 				userDao.selectUser(num,user);
 			}else if(num.equals("..")) {
 				adminC(user);
-			}else if(num.equals("exit")) {
-				System.out.println("退出成功");
-				System.exit(0);
-			}else
-				System.out.println("输入有误");
-		}
-		//图书部分
-		else if (num.equals("2")) {
+			}else {
+				if (!num.equals("exit")) {
+					System.out.println("无效输入");
+				}
+			}
+			
+		/**
+		 * 操作图书
+		*/	
+		}else if (num.equals("2")) {
 			userDao.selectAllBook(user);
 			
 			//增删改查
@@ -131,17 +144,20 @@ public class User {
 				userDao.selectBook(num,user);
 			}else if(num.equals("..")) {
 				adminC(user);
-			}else if(num.equals("exit")) {
-				System.out.println("退出成功");
-				System.exit(0);
-			}else
-				System.out.println("输入有误");
+			}else {
+				if (!num.equals("exit")) {
+					System.out.println("无效输入");
+				}
+			}
+		
+			
+		// 操作用户、操作图书
 		}else if(num.equals("..")) {
 			LoginC.login();
-		}else if(num.equals("exit")) {
-			System.out.println("退出成功");
-			System.exit(0);
-		}else
-			System.out.println("输入有误");
+		}else {
+			if (!num.equals("exit")) {
+				System.out.println("无效输入");
+			}
+		}
 	}
 }
