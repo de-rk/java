@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import service.Zhu;
+
 public class LoginDao extends Dao{
 	//userdb
 	String[] col= {"userid","uname","password","brithday","pro","isDelete"};
@@ -80,7 +82,7 @@ public class LoginDao extends Dao{
 	*/
 	@Override
 	public void selectAll(String table,Userdb user,String[] col) {
-		ResultSet rs=super.executeQ("select * from "+table);
+		ResultSet rs=super.executeQ("select * from "+table+" order by "+col[0]+" desc");
 		forP(rs,user,col);
 	}
 	
@@ -102,15 +104,16 @@ public class LoginDao extends Dao{
 						System.out.print(col[i]+"\t");
 					System.out.println();
 				}
+				c++;
 				for (int j=0;j<n;j++) {
 					//next之后for会再重新一遍
 					System.out.print(rs.getObject(j+1)+"\t");
 				}
-				c++;
 				System.out.println();
 			}
 			if (c==0) {
 				System.out.println("请检查输入");
+				Zhu.e();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

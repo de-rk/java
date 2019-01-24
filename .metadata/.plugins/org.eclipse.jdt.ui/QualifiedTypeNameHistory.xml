@@ -55,9 +55,9 @@
 <fullyQualifiedTypeName name="console.Ting"/>
 <fullyQualifiedTypeName name="service.User"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="service.Zhu"/>
 <fullyQualifiedTypeName name="oracle.net.ano.SupervisorService"/>
 <fullyQualifiedTypeName name="console.Tuichu"/>
 <fullyQualifiedTypeName name="dao.UserDao"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="service.Zhu"/>
 </qualifiedTypeNameHistroy>
