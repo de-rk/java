@@ -18,14 +18,14 @@ public class User {
 	*/
 	public static void userC(Userdb user) {
 		System.out.println("\t"+"你好"+user.getUname());
-		System.out.println("1.查看图书"+"\t"+"2.修改密码");
+		System.out.println("1.查看图书"+"\t"+"2.借阅图书"+"\t"+"3.归还图书"+"\t"+"4.修改密码");
 		
 		//收集操作指令
 		Scanner scanner=new Scanner(System.in);
 		UserDao userDao=new UserDao();
 		num=scanner.next();
 		
-		//1.查看图书
+		//1.查询图书
 		if (num.equals("1")) {
 			System.out.println("\t"+"现有图书");
 			userDao.selectAllBook(user);
@@ -35,16 +35,35 @@ public class User {
 			num=scanner.next();
 			userDao.selectBook(num, user);
 		}
-		//2.修改密码
+		//2.借阅图书
 		else if (num.equals("2")) {
+			System.out.println("\t"+"现有图书");
+			userDao.selectAllBook(user);
+			
+			System.out.println("输入bookid借阅图书");
+			System.out.print("bookid:");
+			num=scanner.next();
+			int b=userDao.borrowBook(num, user);
+			userDao.isOK(b);
+		}
+		//3.归还图书
+		else if (num.equals("3")) {
+			System.out.println("\t"+"现有图书");
+			userDao.selectAllBook(user);
+			
+			System.out.println("输入bookid归还图书");
+			System.out.print("bookid:");
+			num=scanner.next();
+			int b=userDao.returnBook(num,user);
+			userDao.isOK(b);
+		}
+		//4.修改密码
+		else if (num.equals("4")) {
 			System.out.print("请输入密码:");
 			num=scanner.next();
 			
 			int b=userDao.updateUser(num, user);
-			if (b!=0)
-				System.out.println("修改成功");
-			else
-				System.out.println("修改失败");
+			userDao.isOK(b);
 		}else if(num.equals("..")) {
 			LoginC.login();
 		}else {
@@ -118,21 +137,21 @@ public class User {
 			
 			//1.增加图书
 			if (num.equals("1")) {
-				System.out.print("输入要删除的书籍 id:");
-				num=scanner.next();
+//				System.out.print("输入要添加的书籍 id:");
+//				num=scanner.next();
 				int b=userDao.addBook();
 				userDao.isOK(b);
 			}
 			//2.删除图书
 			else if (num.equals("2")) {
-				System.out.print("输入要修改的书籍 id:");
+				System.out.print("输入要删除的书籍 id:");
 				num=scanner.next();
 				int b=userDao.deleteBook(num);
 				userDao.isOK(b);
 			}
 			//3.修改图书
 			else if (num.equals("3")) {
-				System.out.print("输入要查询的书籍 id:");
+				System.out.print("输入要修改的书籍 id:");
 				num=scanner.next();
 				int b=userDao.updateBook(num);
 				userDao.isOK(b);

@@ -44,14 +44,19 @@ public class LoginDao extends Dao{
 	/**
 	 * 添加(图书、用户)
 	*/
+	@SuppressWarnings("resource")
 	@Override
 	public int add(String table,String[] col,Object[] oj,String sql) {
 		//采集信息
-		int num=table.equals("userdb")?3:4;
-		for (int i=0;i<=num;i++) {
+		ResultSet rs;
+		int n;
+		n=table.equals("userdb")?3:4;
+		rs=table.equals("userdb")
+				?super.executeQ("select userid from userdb order by userid desc")
+				:super.executeQ("select bookid from books order by bookid desc");
+		for (int i=0;i<=n;i++) {
 			if (i==0) {
 				//查询userid并降序排列
-				ResultSet rs=super.executeQ("select userid from userdb order by userid desc");
 				try {
 					rs.next();
 					System.out.print(col[i]+":");
@@ -84,8 +89,12 @@ public class LoginDao extends Dao{
 	*/
 	@Override
 	public void forP(ResultSet rs,Userdb user,String[] col) {
-		int n=user.getPro()==0?5:6;
+		int n;
 		int c=0;
+		if (col.length==6)
+			n=user.getPro()==0?5:6;
+		else
+			n=user.getPro()==0?7:8;
 		try {
 			while (rs.next()) {
 				if (c==0) {

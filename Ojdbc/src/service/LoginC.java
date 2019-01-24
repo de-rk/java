@@ -12,6 +12,7 @@ public class LoginC{
 		
 		Scanner scanner=new Scanner(System.in);
 		Userdb user = new Userdb();
+		
 		user.setUserid(scanner.nextInt());
 		System.out.print("password:");
 		user.setPassword(scanner.next());

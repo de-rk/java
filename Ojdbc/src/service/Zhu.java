@@ -9,10 +9,10 @@ public class Zhu {
 
 	//判断num是否为exit
 	private static String num="";
+	static Tuichu t=new Tuichu();
 	public static String getNum() {
 		return num;
 	}
-	static Tuichu t=new Tuichu();
 	
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
@@ -23,7 +23,6 @@ public class Zhu {
 		System.out.println("登入以后输入..返回上一级");
 		t.start();
 		num=scanner.next();
-		
 		
 		//1.注册
 		if (num.equals("1")) {

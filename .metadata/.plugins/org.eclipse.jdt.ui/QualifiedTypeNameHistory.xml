@@ -42,7 +42,6 @@
 <fullyQualifiedTypeName name="dao.LoginDao"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.io.Console"/>
-<fullyQualifiedTypeName name="dao.UserDao"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="service.LoginC"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
@@ -57,7 +56,8 @@
 <fullyQualifiedTypeName name="service.User"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="service.Zhu"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="oracle.net.ano.SupervisorService"/>
 <fullyQualifiedTypeName name="console.Tuichu"/>
+<fullyQualifiedTypeName name="dao.UserDao"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
