@@ -24,9 +24,9 @@ public class LoginC{
 			login();
 		}else if(user.getIsDelete()!=1) {
 				if (user.getPro()==1)
-					User.adminC(user);
+					new User().adminC(user);
 				else
-					User.userC(user);
+					new User().userC(user);
 		}else if(user.getIsDelete()==1) {
 			System.out.println("账户已被管理员删除");
 			Zhu.t.stop();

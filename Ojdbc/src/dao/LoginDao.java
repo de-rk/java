@@ -91,7 +91,7 @@ public class LoginDao extends Dao{
 	*/
 	@Override
 	public void forP(ResultSet rs,Userdb user,String[] col) {
-		int n;
+		int n=0;
 		int c=0;
 		if (col.length==6)
 			n=user.getPro()==0?5:6;
@@ -128,7 +128,7 @@ public class LoginDao extends Dao{
 		Object[] oj=new Object[col.length-1];
 		for (int i=0;i<col.length-1;i++) {
 			System.out.print(col[i+1]+":");
-			oj[i]=scanner.next();
+			oj[i]=scanner.nextLine();
 		}
 		return oj;
 	}

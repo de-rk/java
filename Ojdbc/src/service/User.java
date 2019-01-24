@@ -1,12 +1,13 @@
 package service;
 
 import java.util.Scanner;
-
 import dao.Userdb;
 import dao.UserDao;
 
 public class User {
-	
+	//收集操作指令
+	Scanner scanner=new Scanner(System.in);
+	UserDao userDao=new UserDao();
 	private static String num="";
 	public static String getNum() {
 		return num;
@@ -16,13 +17,9 @@ public class User {
 	 * @param 普通用户
 	 * 	查看图书，需改密码
 	*/
-	public static void userC(Userdb user) {
+	public void userC(Userdb user) {
 		System.out.println("\t"+"你好"+user.getUname());
 		System.out.println("1.查看图书"+"\t"+"2.借阅图书"+"\t"+"3.归还图书"+"\t"+"4.修改密码");
-		
-		//收集操作指令
-		Scanner scanner=new Scanner(System.in);
-		UserDao userDao=new UserDao();
 		num=scanner.next();
 		
 		//1.查询图书
@@ -44,7 +41,7 @@ public class User {
 			System.out.print("bookid:");
 			num=scanner.next();
 			int b=userDao.borrowBook(num, user);
-			userDao.isOK(b);
+			userDao.isOK(b,isOKNum,user);
 		}
 		//3.归还图书
 		else if (num.equals("3")) {
@@ -55,7 +52,7 @@ public class User {
 			System.out.print("bookid:");
 			num=scanner.next();
 			int b=userDao.returnBook(num,user);
-			userDao.isOK(b);
+			userDao.isOK(b,isOKNum,user);
 		}
 		//4.修改密码
 		else if (num.equals("4")) {
@@ -63,7 +60,7 @@ public class User {
 			num=scanner.next();
 			
 			int b=userDao.updateUser(num, user);
-			userDao.isOK(b);
+			userDao.isOK(b,isOKNum,user);
 		}else if(num.equals("..")) {
 			LoginC.login();
 		}else {
@@ -72,110 +69,117 @@ public class User {
 			}
 		}
 	}
-
-
+	
+	
+	//收集操作指令
+	private String isOKNum="";
 	/**
 	 * @param 管理员
 	 * 	对用户删改查，对图书增删改查
 	*/
-	public static void adminC(Userdb user) {
+	public void adminC(Userdb user) {
 		System.out.println("\t"+"管理员登入");
 		System.out.println("1.操作用户"+"\t"+"2.操作图书");
-		
-		Scanner scanner=new Scanner(System.in);
-		UserDao userDao=new UserDao();
 		num=scanner.next();
 		
-		/**
-		 * 操作用户
-		*/
-		if (num.equals("1")) {
-			userDao.selectAllUser(user);
-			
-			//删改查
-			System.out.println("\t"+"删改查");
-			System.out.println("1.删除"+"\t"+"2.修改"+"\t"+"3查询");
-			num=scanner.next();
-			
-			//1.删除用户
-			if (num.equals("1")) {
-				System.out.print("输入要删除的用户 userid:");
-				num=scanner.next();
-				int b=userDao.deleteUser(num);
-				userDao.isOK(b);
-			}
-			//2.修改用户
-			else if (num.equals("2")) {
-				System.out.print("输入要修改的用户 userid:");
-				num=scanner.next();
-				int b=userDao.updateUser(num, user);
-				userDao.isOK(b);
-			}
-			//3.查询用户
-			else if (num.equals("3")) {
-				System.out.print("输入要查询的用户 userid:");
-				num=scanner.next();
-				userDao.selectUser(num,user);
-			}else if(num.equals("..")) {
-				adminC(user);
-			}else {
-				if (!num.equals("exit")) {
-					System.out.println("无效输入");
-				}
-			}
-			
-		/**
-		 * 操作图书
-		*/	
-		}else if (num.equals("2")) {
-			userDao.selectAllBook(user);
-			
-			//增删改查
-			System.out.println("\t"+"删改查");
-			System.out.println("1.增加"+"\t"+"2.删除"+"\t"+"3.修改"+"\t"+"4.查询");
-			num=scanner.next();
-			
-			//1.增加图书
-			if (num.equals("1")) {
-//				System.out.print("输入要添加的书籍 id:");
-//				num=scanner.next();
-				int b=userDao.addBook();
-				userDao.isOK(b);
-			}
-			//2.删除图书
-			else if (num.equals("2")) {
-				System.out.print("输入要删除的书籍 id:");
-				num=scanner.next();
-				int b=userDao.deleteBook(num);
-				userDao.isOK(b);
-			}
-			//3.修改图书
-			else if (num.equals("3")) {
-				System.out.print("输入要修改的书籍 id:");
-				num=scanner.next();
-				int b=userDao.updateBook(num);
-				userDao.isOK(b);
-			}
-			//4.查询图书
-			else if (num.equals("4")) {
-				System.out.print("输入要查询的书籍 id:");
-				num=scanner.next();
-				userDao.selectBook(num,user);
-			}else if(num.equals("..")) {
-				adminC(user);
-			}else {
-				if (!num.equals("exit")) {
-					System.out.println("无效输入");
-				}
-			}
-		
-			
 		// 操作用户、操作图书
+		if (num.equals("1")) {
+			isOKNum=num;
+			adminCUser(user);
+			
+		}else if (num.equals("2")) {
+			isOKNum=num;
+			adminCBook(user);
+			
 		}else if(num.equals("..")) {
 			LoginC.login();
 		}else {
 			if (!num.equals("exit")) {
 				System.out.println("无效输入");
+				userC(user);
+			}
+		}
+	}
+	/**
+	 * 操作用户
+	*/
+	public void adminCUser(Userdb user) {
+		userDao.selectAllUser(user);
+		
+		//删改查
+		System.out.println("\t"+"删改查");
+		System.out.println("1.删除"+"\t"+"2.修改"+"\t"+"3查询");
+		num=scanner.next();
+		
+		//1.删除用户
+		if (num.equals("1")) {
+			System.out.print("输入要删除的用户 userid:");
+			num=scanner.next();
+			int b=userDao.deleteUser(num);
+			userDao.isOK(b,isOKNum,user);
+		}
+		//2.修改用户
+		else if (num.equals("2")) {
+			System.out.print("输入要修改的用户 userid:");
+			num=scanner.next();
+			int b=userDao.updateUser(num, user);
+			userDao.isOK(b,isOKNum,user);
+		}
+		//3.查询用户
+		else if (num.equals("3")) {
+			System.out.print("输入要查询的用户 userid:");
+			num=scanner.next();
+			userDao.selectUser(num,user);
+		}else if(num.equals("..")) {
+			adminC(user);
+		}else {
+			if (!num.equals("exit")) {
+				System.out.println("无效输入");
+				adminCUser(user);
+			}
+		}
+	}
+	/**
+	 * 操作图书
+	*/
+	public void adminCBook(Userdb user) {
+		userDao.selectAllBook(user);
+		
+		//增删改查
+		System.out.println("\t"+"删改查");
+		System.out.println("1.增加"+"\t"+"2.删除"+"\t"+"3.修改"+"\t"+"4.查询");
+		num=scanner.next();
+		
+		//1.增加图书
+		if (num.equals("1")) {
+			int b=userDao.addBook();
+			userDao.isOK(b,isOKNum,user);
+		}
+		//2.删除图书
+		else if (num.equals("2")) {
+			System.out.print("输入要删除的书籍 id:");
+			num=scanner.next();
+			int b=userDao.deleteBook(num);
+			userDao.isOK(b,isOKNum,user);
+		}
+		//3.修改图书
+		else if (num.equals("3")) {
+			System.out.print("输入要修改的书籍 id:");
+			num=scanner.next();
+			int b=userDao.updateBook(num);
+			userDao.isOK(b,isOKNum,user);
+		}
+		//4.查询图书
+		else if (num.equals("4")) {
+			System.out.print("输入要查询的书籍 id:");
+			num=scanner.next();
+			userDao.selectBook(num,user);
+		}else if(num.equals("..")) {
+			adminC(user);
+		}else {
+			if (!num.equals("exit")) {
+				System.out.println("无效输入");
+				adminCBook(user);
 			}
 		}
 	}

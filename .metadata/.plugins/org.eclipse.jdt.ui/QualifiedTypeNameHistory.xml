@@ -35,7 +35,6 @@
 <fullyQualifiedTypeName name="eighteenth.SignUP"/>
 <fullyQualifiedTypeName name="eighteenth.Userdb"/>
 <fullyQualifiedTypeName name="eighteenth.Db"/>
-<fullyQualifiedTypeName name="dao.Userdb"/>
 <fullyQualifiedTypeName name="dao.userDao"/>
 <fullyQualifiedTypeName name="console.LoginC"/>
 <fullyQualifiedTypeName name="dao.Dao"/>
@@ -53,11 +52,12 @@
 <fullyQualifiedTypeName name="console.Test"/>
 <fullyQualifiedTypeName name="console.TubeP"/>
 <fullyQualifiedTypeName name="console.Ting"/>
-<fullyQualifiedTypeName name="service.User"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="oracle.net.ano.SupervisorService"/>
 <fullyQualifiedTypeName name="console.Tuichu"/>
 <fullyQualifiedTypeName name="dao.UserDao"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="service.User"/>
 <fullyQualifiedTypeName name="service.Zhu"/>
+<fullyQualifiedTypeName name="dao.Userdb"/>
 </qualifiedTypeNameHistroy>

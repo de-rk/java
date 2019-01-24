@@ -1,9 +1,9 @@
 package service;
 
 import java.util.Scanner;
-
 import console.Tuichu;
 import dao.UserDao;
+import dao.Userdb;
 
 public class Zhu {
 
@@ -27,7 +27,7 @@ public class Zhu {
 		//1.注册
 		if (num.equals("1")) {
 			int b=LoginC.signUp();
-			new UserDao().isOK(b);
+			new UserDao().isOK(b,num,new Userdb());
 		}
 		//2.登入
 		else if (num.equals("2")) {

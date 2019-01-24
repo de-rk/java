@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import service.User;
+import service.Zhu;
+
 public class UserDao extends LoginDao{
 	//books
 	private String[] col= {"bookid","bname","writer","type","price","isBorrow","borrower","isDelete"};
@@ -25,7 +28,7 @@ public class UserDao extends LoginDao{
 	}
 	//删除图书
 	public int deleteBook(String num) {
-		return super.update("update books set isDelete=1 where userid="+num);
+		return super.update("update books set isDelete=1 where bookid="+num);
 	}
 
 	//增加图书
@@ -41,7 +44,7 @@ public class UserDao extends LoginDao{
 	public int updateBook(String num) {
 		Object[] oj=forO(this.col);
 			return super.update("update books set bname='"+oj[0]+"',writer='"+oj[1]+"',type='"
-								+oj[2]+"',price="+oj[3]+",isBorrow="+oj[4]+",borrower="+oj[5]+",isDelete="+oj[6]
+								+oj[2]+"',price="+oj[3]+",isBorrow="+oj[4]+",borrower='"+oj[5]+"',isDelete="+oj[6]
 								+" where bookid="+num);
 	}
 	
@@ -101,14 +104,25 @@ public class UserDao extends LoginDao{
 	}
 	
 	//判断执行成功没有
-	public void isOK(int b) {
-		if (b!=0) {
-			System.out.println("成功");
-			System.exit(0);
-		}
-		else {
-			System.out.println("失败");
-			System.exit(0);
-		}
+//	@SuppressWarnings("unused")
+	public void isOK(int b,String isOKNum,Userdb user) {
+			if (b!=0) {
+				System.out.println("成功");
+			}else 
+				System.out.println("失败");
+			System.out.println("输入任意键返回上一级");
+			scanner.nextLine();
+			
+			//注册
+			if (user==null)
+				Zhu.main(null);
+			//普通用户
+			else if (user.getPro()==0)
+				new User().userC(user);
+			//管理员
+			else if (isOKNum.equals("1")&&user.getPro()==1)
+				new User().adminCUser(user);
+			else if (isOKNum.equals("2")&&user.getPro()==1)
+				new User().adminCBook(user);
 	}
 }
