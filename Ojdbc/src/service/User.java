@@ -7,7 +7,6 @@ import dao.UserDao;
 public class User {
 	//收集操作指令
 	Scanner scanner=new Scanner(System.in);
-	UserDao userDao=new UserDao();
 	private static String num="";
 	public static String getNum() {
 		return num;
@@ -20,6 +19,7 @@ public class User {
 	public void userC(Userdb user) {
 		System.out.println("\t"+"你好"+user.getUname());
 		System.out.println("1.查看图书"+"\t"+"2.借阅图书"+"\t"+"3.归还图书"+"\t"+"4.修改密码");
+		UserDao userDao=new UserDao();
 		num=scanner.next();
 		
 		//1.查询图书
@@ -31,6 +31,7 @@ public class User {
 			System.out.print("bookid:");
 			num=scanner.next();
 			userDao.selectBook(num, user);
+			userC(user);
 		}
 		//2.借阅图书
 		else if (num.equals("2")) {
@@ -73,6 +74,9 @@ public class User {
 	
 	//收集操作指令
 	private String isOKNum="";
+	public void setIsOKNum(String isOKNum) {
+		this.isOKNum=isOKNum;
+	}
 	/**
 	 * @param 管理员
 	 * 	对用户删改查，对图书增删改查
@@ -104,6 +108,7 @@ public class User {
 	 * 操作用户
 	*/
 	public void adminCUser(Userdb user) {
+		UserDao userDao=new UserDao();
 		userDao.selectAllUser(user);
 		
 		//删改查
@@ -130,6 +135,7 @@ public class User {
 			System.out.print("输入要查询的用户 userid:");
 			num=scanner.next();
 			userDao.selectUser(num,user);
+			adminCUser(user);
 		}else if(num.equals("..")) {
 			adminC(user);
 		}else {
@@ -143,6 +149,7 @@ public class User {
 	 * 操作图书
 	*/
 	public void adminCBook(Userdb user) {
+		UserDao userDao=new UserDao();
 		userDao.selectAllBook(user);
 		
 		//增删改查
@@ -174,6 +181,7 @@ public class User {
 			System.out.print("输入要查询的书籍 id:");
 			num=scanner.next();
 			userDao.selectBook(num,user);
+			adminCBook(user);
 		}else if(num.equals("..")) {
 			adminC(user);
 		}else {

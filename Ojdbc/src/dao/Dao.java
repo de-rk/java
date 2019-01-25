@@ -11,8 +11,8 @@ public abstract class Dao {
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
-//	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
-	private String url="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
+	private String url="jdbc:oracle:thin:@127.0.0.1:1521:demo";
+//	private String url="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
 	private String user="scott";
 	private String password="tiger";
 	

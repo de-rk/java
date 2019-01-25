@@ -24,11 +24,27 @@ public class UserDao extends LoginDao{
 	
 	//删除user
 	public int deleteUser(String num) {
-		return super.update("update userdb set isDelete=1 where userid="+num);
+		ResultSet rs=super.executeQ("select isdelete from userdb where userid="+num);
+		try {
+			if (rs.next())
+				if (rs.getInt(1)==0)
+					return super.update("update userdb set isDelete=1 where userid="+num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 	//删除图书
 	public int deleteBook(String num) {
-		return super.update("update books set isDelete=1 where bookid="+num);
+		ResultSet rs=super.executeQ("select isdelete from books where bookid="+num);
+		try {
+			if (rs.next())
+				if (rs.getInt(1)==0)
+					return super.update("update books set isDelete=1 where bookid="+num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 	//增加图书
@@ -76,8 +92,8 @@ public class UserDao extends LoginDao{
 		try {
 			if (rs.next()) {
 				if (rs.getInt(1)==0)
-					return super.update("update books set isborrow=1,borrower='"
-							+user.getUname()+"' where bookid="+num);
+					return super.update("update books set isborrow=1,borrowerid='"
+							+user.getUserid()+"' where bookid="+num);
 				}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -87,11 +103,11 @@ public class UserDao extends LoginDao{
 	}
 	//归还图书
 	public int returnBook(String num,Userdb user) {
-		ResultSet rs=super.executeQ("select borrower from books where bookid="+num);
+		ResultSet rs=super.executeQ("select borrowerid from books where bookid="+num);
 		try {
 			return rs.next()
-					?(user.getUname().equals(rs.getObject(1))
-							?super.update("update books set isborrow=0,borrower='' where bookid="+num)
+					?(user.getUserid()==(rs.getInt(1))
+							?super.update("update books set isborrow=0,borrowerid='' where bookid="+num)
 							:0)
 					:0;
 //			if (rs.next())
@@ -120,9 +136,15 @@ public class UserDao extends LoginDao{
 			else if (user.getPro()==0)
 				new User().userC(user);
 			//管理员
-			else if (isOKNum.equals("1")&&user.getPro()==1)
-				new User().adminCUser(user);
-			else if (isOKNum.equals("2")&&user.getPro()==1)
-				new User().adminCBook(user);
+			else if (isOKNum.equals("1")&&user.getPro()==1) {
+				User newUser=new User();
+				newUser.setIsOKNum(isOKNum);
+				newUser.adminCUser(user);
+			}
+			else if (isOKNum.equals("2")&&user.getPro()==1) {
+				User newUser=new User();
+				newUser.setIsOKNum(isOKNum);
+				newUser.adminCBook(user);
+			}
 	}
 }
