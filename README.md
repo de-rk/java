@@ -35,7 +35,8 @@ select * from dbuser
 update dbuser set password='admin' where userid=1
 
 --insert--
-insert table dbuser(userid,uname,password) values(1,'Jerry','admin')
+~~insert table dbuser(userid,uname,password) values(1,'Jerry','admin')~~
+insert into dbuser(userid,uname,password) values(1,'Jerry','admin')
 
 --alter--
 alter table dbuser add(hiredate varchar(20))
